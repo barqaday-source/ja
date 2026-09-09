@@ -1,0 +1,16 @@
+{
+  "name": "jabilak-suite",
+  "private": true,
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "install:all": "pnpm --dir apps/customer-panel install && pnpm --dir apps/merchant-panel install && pnpm --dir apps/admin-panel install",
+    "check": "pnpm --dir apps/customer-panel check && pnpm --dir apps/merchant-panel check && pnpm --dir apps/admin-panel check",
+    "check:customer": "pnpm --dir apps/customer-panel check",
+    "check:merchant": "pnpm --dir apps/merchant-panel check",
+    "check:admin": "pnpm --dir apps/admin-panel check",
+    "supabase:types": "supabase gen types typescript --project-id \"$PROJECT_REF\" --schema public > apps/merchant-panel/lib/supabase/database.types.ts",
+    "dev:customer": "pnpm --dir apps/customer-panel dev",
+    "dev:merchant": "pnpm --dir apps/merchant-panel dev",
+    "dev:admin": "pnpm --dir apps/admin-panel dev"
+  }
+}
